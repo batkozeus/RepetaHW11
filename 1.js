@@ -117,6 +117,10 @@ function createFilterObject() {
 
 const filterByParameter = (filteredObject, laptop, param) => {
   let correspondingParam = false;
+  if (filteredObject[param].length === 0) {
+    correspondingParam = true;
+    return correspondingParam
+  }
   filteredObject[param].forEach(filterParam => {
     if (filterParam == laptop[param]) {
       correspondingParam = true;
